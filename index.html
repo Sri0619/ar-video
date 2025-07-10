@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scan to Watch Video in AR</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f5f5f5;
+    padding: 20px;
+  }
+  h1 {
+    color: #333;
+  }
+  #qrcode {
+    margin: 20px auto;
+  }
+</style>
+</head>
+<body>
+
+<h1>Scan the QR Code to Watch the Video in AR</h1>
+
+<p>Scan below to open the video in markerless AR on your device.</p>
+
+<div id="qrcode"></div>
+
+<script>
+// Point to the AR page
+const arLink = window.location.href.replace('index.html', '') + 'ar.html';
+
+new QRCode(document.getElementById("qrcode"), {
+  text: arLink,
+  width: 200,
+  height: 200
+});
+</script>
+
+</body>
+</html>
